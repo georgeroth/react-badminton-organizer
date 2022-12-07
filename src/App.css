@@ -1,0 +1,31 @@
+/* HEADER */
+
+header {
+  height: 80px;
+  position: sticky;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  place-items: center start;
+}
+
+.menu-container ul li {
+  list-style-type: none;
+  display: inline-block;
+  margin-right: 50px;
+}
+
+.sitename a {
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  color: #000;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+.sitename a span {
+  color: #d2360c;
+}
+
+header img {
+  height: 70px;
+}

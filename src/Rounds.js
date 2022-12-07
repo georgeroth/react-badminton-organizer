@@ -1,7 +1,7 @@
 export default function Setup() {
     return (
-        <>
-            <div>This is the rounds</div>
-        </>
+        <main>
+            <div>This is the rounds page</div>
+        </main>
     )
 }

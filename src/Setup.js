@@ -1,7 +1,7 @@
 export default function Setup() {
     return (
-        <>
-            <div>This is the setup</div>
-        </>
+        <main>
+            <div>This is the setup page</div>
+        </main>
     )
 }
