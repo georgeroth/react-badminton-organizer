@@ -55,6 +55,7 @@ h1, h2 {
   text-decoration: none;
   margin-left: 20px;
   font-size: 2rem;
+  cursor: default;
 }
 
 h1 {

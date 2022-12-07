@@ -19,7 +19,7 @@ export default function Header() {
                 <ul>
                     <li><Link to="/">Setup</Link></li>
                     <li><Link to="/rounds">Rounds</Link></li>
-                    <li>Matches (soon)</li>
+                    <li><a href="#">Matches</a> (soon)</li>
                 </ul>
             </div>
         </header>
