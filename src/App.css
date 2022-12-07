@@ -1,11 +1,13 @@
 /* HEADER */
 
 header {
-  height: 80px;
+  height: 100px;
   position: sticky;
   display: grid;
   grid-template-columns: auto 1fr auto;
   place-items: center start;
+  padding-left: 20px;
+  box-shadow: 1px 10px 20px rgba(0, 0, 0, 0.098);
 }
 
 .menu-container ul li {
@@ -14,12 +16,19 @@ header {
   margin-right: 50px;
 }
 
-.sitename a {
+.sitename a, .menu-container ul li a {
   font-family: 'Oswald', sans-serif;
   text-transform: uppercase;
   color: #000;
   text-decoration: none;
   margin-left: 20px;
+  font-size: 1.4rem;
+}
+
+.menu-container ul li a {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  font-size: 1.3rem;
 }
 
 .sitename a span {
@@ -27,5 +36,83 @@ header {
 }
 
 header img {
-  height: 70px;
+  height: 50px;
+  margin-bottom: -2px;
+}
+
+/* SETUP PAGE */
+
+main {
+  text-align: center;
+  max-width: 800px;
+  margin: 50px auto 0 auto;
+}
+
+h1, h2 {
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  color: #000;
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 2rem;
+}
+
+h1 {
+  color: #d2360c;
+  margin-bottom: 40px;
+}
+
+h2 {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+label, textarea {
+  display: block;
+  text-align: left;
+}
+
+form {
+  text-align: center;
+}
+
+.playerslist {
+  width: 100%;
+  border: 2px solid #000;
+  resize: none;
+  border-radius: 10px;
+  margin-bottom: 50px;
+  padding: 5px;
+}
+
+.inline {
+  display: inline-block;
+  width: 50%;
+  text-align: center;
+}
+
+.inline input {
+  width: 50%;
+  border: 2px solid #000;
+  resize: none;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.button {
+  background-color: #d2360c;
+  color: #fff;
+  padding: 10px 50px;
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  margin-top: 50px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.button:hover, .button:active {
+  background-color: #fff;
+  color: #d2360c;
 }
