@@ -159,6 +159,7 @@ form {
 td {
   padding: 10px;
   border-left: 1px solid #ccc;
+  cursor: default;
 }
 
 .table-content td {
@@ -171,4 +172,8 @@ td {
   border-radius: 10px;
   background-color: white;
   padding: 20px;
+}
+
+.spacer {
+  height: 100px;
 }
