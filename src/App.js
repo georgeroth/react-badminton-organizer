@@ -44,22 +44,26 @@ function App() {
     console.log("numberOfCourts is:", numberOfCourts)
     console.log("numberOfRounds is:", numberOfRounds)
     const temporaryRounds = []
+    let temporaryPlayerData = playerData
     for (let i = 0; i < numberOfRounds; i++) {
-      const shuffledPlayers = playerData.sort((playerObject) => playerObject.chanceToBePicked * 0.5 - Math.random());
+      const shuffledPlayers = temporaryPlayerData.sort((playerObject) => playerObject.chanceToBePicked * 0.5 - Math.random());
       let oneRound = shuffledPlayers.slice(0, playersPerCourt * numberOfCourts);
       temporaryRounds.push(oneRound)
-      // oneRound.forEach(playerWhoPlays => {
-      //   const updatedPlayerState = playerData.map(playerInState => {
-      //     if (playerWhoPlays.name === playerInState.name) {
-      //       console.log("The following is returned in the if: ", {...playerInState, chanceToBePicked: playerWhoPlays.chanceToBePicked - 0.1 })
-      //       return {...playerInState, chanceToBePicked: playerInState.chanceToBePicked - 0.1 }
-      //     } 
-      //     return playerInState
-      //   })
-      //   console.log("updatedPlayerState is:", updatedPlayerState)
-      //   setPlayerData(updatedPlayerState)
-      // })
+      oneRound.forEach(playerWhoPlays => {
+        const updatedPlayerState = temporaryPlayerData.map(playerInState => {
+          if (playerWhoPlays.name === playerInState.name) {
+            console.log("The following is returned in the if: ", {...playerInState, chanceToBePicked: playerWhoPlays.chanceToBePicked - 0.1 })
+            return {...playerInState, chanceToBePicked: playerInState.chanceToBePicked - 0.2 }
+          } 
+          return playerInState
+        })
+        console.log("updatedPlayerState is:", updatedPlayerState)
+        temporaryPlayerData = updatedPlayerState
+        
+      })
+      setPlayerData(temporaryPlayerData)
       setRounds(temporaryRounds)
+      console.log("playerData now is ", playerData)
       console.log("rounds is:", rounds)
     }
     navigate("/rounds")

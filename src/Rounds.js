@@ -7,9 +7,8 @@ export default function Setup({rounds, playerData, playersPerCourt, numberOfCour
             <h1>
                 Rounds
             </h1>
-                {rounds.length > 0 && (
+                {playerData.length > 0 && (
                     <table className="results-table">
-
                         <thead>
                             <tr className="table-header">
                                 <td className="player"></td>
@@ -23,13 +22,13 @@ export default function Setup({rounds, playerData, playersPerCourt, numberOfCour
                                 return (
                                     <tr className="table-content" key={index}>
                                         <td className="player">{player.name}</td>
-                                        {rounds.map((round) => {
+                                        {rounds.map((round, roundIndex) => {
                                                 for (let i = 0; i < playersPerCourt * numberOfCourts; i++) {
                                                     if (round[i].name === player.name) {
-                                                        return <td className="match-x">X</td>
+                                                        return <td className="match-x" key={roundIndex}>X</td>
                                                     }
                                                 }
-                                                return <td className="match-x"></td>
+                                                return <td className="match-x" key={roundIndex}></td>
                                             }) 
                                         }
                                     </tr>
@@ -38,11 +37,11 @@ export default function Setup({rounds, playerData, playersPerCourt, numberOfCour
                         </tbody>
                     </table>
                 )}
-                {rounds.length === 0 && (
-                    <table className="results-table">
-                        <div>No player data entered – please head to the Setup page to enter data.</div>
+                {playerData.length === 0 && (
+                    <main className="nodata-message">          
+                        <div>No player data entered – please head to the Setup page to enter players.</div>
                         <input type="submit" value="Enter players" className="button" onClick={() => {navigate("/")}}/>
-                    </table>
+                    </main>
                 )}
 
             <div className="spacer"></div>

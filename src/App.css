@@ -166,7 +166,7 @@ td {
   border-top: 1px solid #ccc;
 }
 
-.results-table {
+.results-table, .nodata-message {
   width: 100%;
   border: 2px solid #000;
   border-radius: 10px;
