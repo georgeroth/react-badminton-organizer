@@ -27,9 +27,7 @@ function App() {
     if (event.target.name === "players") {
       const playersList = event.target.value.split(/\r?\n/)
       setPlayerData(playersList)
-      if (playerData.length < playersPerCourt) {
-        setNotEnoughPlayers(true)
-      } else {
+      if (playerData.length > playersPerCourt) {
       setNotEnoughPlayers(false)
       }
     }
