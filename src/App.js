@@ -21,13 +21,10 @@ function App() {
 
   const handleInput = (event) => {
     if (event.target.name === "players") {
-      console.log("in the if")
       const playersList = event.target.value.split(/\r?\n/)
-      console.log("playersList is:", playersList)
       const incomingPlayersData = []
       playersList.forEach(player => {
         const newPlayerObject = {name: player, chanceToBePicked: 1}
-        console.log("newPlayerObject is:", newPlayerObject)
         incomingPlayersData.push(newPlayerObject)
       })
       setPlayerData(incomingPlayersData)
@@ -51,17 +48,17 @@ function App() {
       const shuffledPlayers = playerData.sort((playerObject) => playerObject.chanceToBePicked * 0.5 - Math.random());
       let oneRound = shuffledPlayers.slice(0, playersPerCourt * numberOfCourts);
       temporaryRounds.push(oneRound)
-      oneRound.forEach(playerWhoPlays => {
-        const updatedPlayerState = playerData.map(playerInState => {
-          if (playerWhoPlays.name === playerInState.name) {
-            console.log("The following is returned in the if: ", {...playerInState, chanceToBePicked: playerWhoPlays.chanceToBePicked - 0.1 })
-            return {...playerInState, chanceToBePicked: playerInState.chanceToBePicked - 0.1 }
-          } 
-          return playerInState
-        })
-        console.log("updatedPlayerState is:", updatedPlayerState)
-        setPlayerData(updatedPlayerState)
-      })
+      // oneRound.forEach(playerWhoPlays => {
+      //   const updatedPlayerState = playerData.map(playerInState => {
+      //     if (playerWhoPlays.name === playerInState.name) {
+      //       console.log("The following is returned in the if: ", {...playerInState, chanceToBePicked: playerWhoPlays.chanceToBePicked - 0.1 })
+      //       return {...playerInState, chanceToBePicked: playerInState.chanceToBePicked - 0.1 }
+      //     } 
+      //     return playerInState
+      //   })
+      //   console.log("updatedPlayerState is:", updatedPlayerState)
+      //   setPlayerData(updatedPlayerState)
+      // })
       setRounds(temporaryRounds)
       console.log("rounds is:", rounds)
     }
@@ -74,7 +71,7 @@ function App() {
       <Routes>
         <Route
           path="/rounds"
-          element={<Rounds rounds={rounds} playerData={playerData} />}
+          element={<Rounds rounds={rounds} playerData={playerData} playersPerCourt={playersPerCourt} numberOfCourts={numberOfCourts} />}
         />
           <Route
           path="/setup"
