@@ -12,6 +12,7 @@ function App() {
   const [numberOfRounds, setNumberofRounds] = useState(1)
   const [rounds, setRounds] = useState([])
   const [playerDataDisplay, setPlayerDataDisplay] = useState("")
+  const [notEnoughPlayers, setNotEnoughPlayers] = useState(false)
   const playersPerCourt = 4
   const navigate = useNavigate()
 
@@ -41,6 +42,10 @@ function App() {
     console.log("playerData is:", playerData)
     console.log("numberOfCourts is:", numberOfCourts)
     console.log("numberOfRounds is:", numberOfRounds)
+    if (playerData.length < playersPerCourt) {
+      setNotEnoughPlayers(true)
+    } else {
+    setNotEnoughPlayers(false)
     const temporaryRounds = []
     let availablePlayers = []
     for (let i = 0; i < numberOfRounds; i++) {
@@ -69,6 +74,7 @@ function App() {
     }
     setRounds(temporaryRounds)
     navigate("/rounds")
+    }
   }
 
   return (
@@ -80,14 +86,11 @@ function App() {
           element={<Rounds rounds={rounds} playerData={playerData} playersPerCourt={playersPerCourt} numberOfCourts={numberOfCourts} />}
         />
           <Route
-          path="/setup"
-          element={<Setup playerDataDisplay={playerDataDisplay} handleInput={handleInput} playerData={playerData} numberOfCourts={numberOfCourts} numberOfRounds={numberOfRounds} generateMatches={generateMatches} />}
-        />
-          <Route
           path="/"
           element={<Setup playerDataDisplay={playerDataDisplay} handleInput={handleInput} playerData={playerData} numberOfCourts={numberOfCourts} numberOfRounds={numberOfRounds} generateMatches={generateMatches} />}
         />
       </Routes>
+      {notEnoughPlayers && (<div className="error">The minimum number of players is {playersPerCourt}. You currently have {playerData.length} players added. <br /><strong>Please add at least {playersPerCourt-playerData.length} more players and try again.</strong></div>)}
     </div>
   );
 }
