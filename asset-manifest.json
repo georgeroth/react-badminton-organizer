@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/react-badminton-organizer/static/css/main.945992d1.css",
+    "main.js": "/react-badminton-organizer/static/js/main.35942182.js",
+    "static/media/logo_transparent.png": "/react-badminton-organizer/static/media/logo_transparent.1a24bda3549d47814bf9.png",
+    "index.html": "/react-badminton-organizer/index.html",
+    "main.945992d1.css.map": "/react-badminton-organizer/static/css/main.945992d1.css.map",
+    "main.35942182.js.map": "/react-badminton-organizer/static/js/main.35942182.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.945992d1.css",
+    "static/js/main.35942182.js"
+  ]
+}
