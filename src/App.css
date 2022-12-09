@@ -3,7 +3,6 @@
 body {
   height: 100vh;
   background: url(../public/img/logo_transparent.png) no-repeat bottom right;
-  background-size: 40%;
 }
 
 /* HEADER */
