@@ -21,10 +21,10 @@ export default function Setup({rounds, playerData, playersPerCourt, numberOfCour
                             {playerData.map((player, index) => {
                                 return (
                                     <tr className="table-content" key={index}>
-                                        <td className="player">{player.name}</td>
+                                        <td className="player">{player}</td>
                                         {rounds.map((round, roundIndex) => {
                                                 for (let i = 0; i < playersPerCourt * numberOfCourts; i++) {
-                                                    if (round[i].name === player.name) {
+                                                    if (round[i] === player) {
                                                         return <td className="match-x" key={roundIndex}>X</td>
                                                     }
                                                 }

@@ -11,23 +11,21 @@ function App() {
   const [numberOfCourts, setNumberofCourts] = useState(1)
   const [numberOfRounds, setNumberofRounds] = useState(1)
   const [rounds, setRounds] = useState([])
-  let playerDataDisplay = []
+  const [playerDataDisplay, setPlayerDataDisplay] = useState("")
   const playersPerCourt = 4
   const navigate = useNavigate()
 
-  // useEffect(() => {
-  //   playerDataDisplay = playerData.split(',').join('\n')
-  // }, [playerData])
+  useEffect(() => {
+      if (playerData.length > 0) {
+      setPlayerDataDisplay(playerData.join('\n'))
+    }
+  }, [playerData])
+
 
   const handleInput = (event) => {
     if (event.target.name === "players") {
       const playersList = event.target.value.split(/\r?\n/)
-      const incomingPlayersData = []
-      playersList.forEach(player => {
-        const newPlayerObject = {name: player, chanceToBePicked: 1}
-        incomingPlayersData.push(newPlayerObject)
-      })
-      setPlayerData(incomingPlayersData)
+      setPlayerData(playersList)
     }
     if (event.target.name === "courts") {
       setNumberofCourts(event.target.value)
@@ -44,28 +42,32 @@ function App() {
     console.log("numberOfCourts is:", numberOfCourts)
     console.log("numberOfRounds is:", numberOfRounds)
     const temporaryRounds = []
-    let temporaryPlayerData = playerData
+    let availablePlayers = []
     for (let i = 0; i < numberOfRounds; i++) {
-      const shuffledPlayers = temporaryPlayerData.sort((playerObject) => playerObject.chanceToBePicked * 0.5 - Math.random());
-      let oneRound = shuffledPlayers.slice(0, playersPerCourt * numberOfCourts);
-      temporaryRounds.push(oneRound)
-      oneRound.forEach(playerWhoPlays => {
-        const updatedPlayerState = temporaryPlayerData.map(playerInState => {
-          if (playerWhoPlays.name === playerInState.name) {
-            console.log("The following is returned in the if: ", {...playerInState, chanceToBePicked: playerWhoPlays.chanceToBePicked - 0.1 })
-            return {...playerInState, chanceToBePicked: playerInState.chanceToBePicked - 0.2 }
-          } 
-          return playerInState
-        })
-        console.log("updatedPlayerState is:", updatedPlayerState)
-        temporaryPlayerData = updatedPlayerState
-        
-      })
-      setPlayerData(temporaryPlayerData)
-      setRounds(temporaryRounds)
-      console.log("playerData now is ", playerData)
-      console.log("rounds is:", rounds)
+      let temporaryRound = []
+      for (let j = 0; j < playersPerCourt * numberOfCourts; j++) {
+        console.log("Available players to start with are: ", availablePlayers)
+        console.log("What is happening to allPlayers", playerData)
+        if (availablePlayers.length === 0) {
+          availablePlayers = [...playerData]
+          console.log("Available players have been replenished! ", availablePlayers, "playerData is ", playerData)
+        }
+        const randomIndex = Math.floor(Math.random() * availablePlayers.length);
+        const playerToBeAdded = availablePlayers[randomIndex]
+        if (temporaryRound.includes(playerToBeAdded)) {
+          console.log("Includes player already!")
+          --j
+          continue
+        } else {
+          temporaryRound.push(playerToBeAdded)
+          availablePlayers.splice(randomIndex, 1)
+          console.log("AvailablePlayers after the removal is:", availablePlayers)
+        }
+        console.log('temporaryRound is:', temporaryRound)
+      }
+      temporaryRounds.push(temporaryRound)
     }
+    setRounds(temporaryRounds)
     navigate("/rounds")
   }
 
@@ -83,7 +85,7 @@ function App() {
         />
           <Route
           path="/"
-          element={<Setup handleInput={handleInput} playerData={playerData} numberOfCourts={numberOfCourts} numberOfRounds={numberOfRounds} generateMatches={generateMatches} />}
+          element={<Setup playerDataDisplay={playerDataDisplay} handleInput={handleInput} playerData={playerData} numberOfCourts={numberOfCourts} numberOfRounds={numberOfRounds} generateMatches={generateMatches} />}
         />
       </Routes>
     </div>
