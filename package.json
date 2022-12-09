@@ -2,6 +2,7 @@
   "name": "react-badminton-organizer",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://georgeroth.github.io/react-badminton-organizer",
   "dependencies": {
     "gh-pages": "^4.0.0",
     "@testing-library/jest-dom": "^5.16.5",
