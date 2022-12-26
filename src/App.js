@@ -93,7 +93,7 @@ function App() {
           element={<Setup playerDataDisplay={playerDataDisplay} handleInput={handleInput} playerData={playerData} numberOfCourts={numberOfCourts} numberOfRounds={numberOfRounds} generateMatches={generateMatches} />}
         />
       </Routes>
-      {notEnoughPlayers && (<div className="error">The minimum number of players is {playersPerCourt}. You currently have {playerData.length} players added. <br /><strong>Please add at least {playersPerCourt-playerData.length} more players and try again.</strong></div>)}
+      {notEnoughPlayers && (<div className="error">The minimum number of players is {playersPerCourt}.<br /><strong>Please add more players and try again.</strong></div>)}
     </div>
   );
 }
