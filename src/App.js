@@ -45,7 +45,7 @@ function App() {
     console.log("playerData is:", playerData)
     console.log("numberOfCourts is:", numberOfCourts)
     console.log("numberOfRounds is:", numberOfRounds)
-    if (playerData.length < playersPerCourt) {
+    if (playerData.length < playersPerCourt * numberOfCourts) {
       setNotEnoughPlayers(true)
     } else {
     setNotEnoughPlayers(false)
@@ -93,7 +93,7 @@ function App() {
           element={<Setup playerDataDisplay={playerDataDisplay} handleInput={handleInput} playerData={playerData} numberOfCourts={numberOfCourts} numberOfRounds={numberOfRounds} generateMatches={generateMatches} />}
         />
       </Routes>
-      {notEnoughPlayers && (<div className="error">The minimum number of players is {playersPerCourt}.<br /><strong>Please add more players and try again.</strong></div>)}
+      {notEnoughPlayers && (<div className="error">You don't have enough players for the amount of courts you have. <br></br><strong>Please lower the amount of courts or add more players and then try again.</strong></div>)}
     </div>
   );
 }
