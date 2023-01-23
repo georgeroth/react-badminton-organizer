@@ -9,7 +9,7 @@ import { useState, useEffect } from 'react'
 function App() {
   const [playerData, setPlayerData] = useState([])
   const [numberOfCourts, setNumberofCourts] = useState(1)
-  const [numberOfRounds, setNumberofRounds] = useState(1)
+  const [numberOfRounds, setNumberofRounds] = useState(5)
   const [rounds, setRounds] = useState([])
   const [playerDataDisplay, setPlayerDataDisplay] = useState("")
   const [notEnoughPlayers, setNotEnoughPlayers] = useState(false)
