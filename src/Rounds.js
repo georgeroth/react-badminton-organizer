@@ -11,7 +11,7 @@ export default function Setup({rounds, playerData, playersPerCourt, numberOfCour
                     <table className="results-table">
                         <thead>
                             <tr className="table-header">
-                                <td className="player"></td>
+                                <td className="player horizontal-write-direction">Players List</td>
                                 {rounds.map((round, index) => {
                                     return <td key={index}>Round {index+1}</td>
                                 })}
