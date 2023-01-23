@@ -5,7 +5,7 @@ export default function Header() {
         <header className="App-header">
             <div className="logo-container">
                 <Link to="/">
-                    <img src="img\logo.png" alt="Badminton Organizer logo" />
+                    <img src={require('./logo.png')} alt="Badminton Organizer logo" />
                 </Link>
             </div>
             <div className="sitename-container">

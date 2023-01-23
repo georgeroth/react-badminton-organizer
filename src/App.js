@@ -16,15 +16,16 @@ function App() {
   const playersPerCourt = 4
   const navigate = useNavigate()
 
-  useEffect(() => {
-      if (playerData.length > 0) {
-      setPlayerDataDisplay(playerData.join('\n'))
-    }
-  }, [playerData])
+  // useEffect(() => {
+  //     if (playerData.length > 0) {
+  //     setPlayerDataDisplay(playerData.join('\n'))
+  //   }
+  // }, [playerData])
 
 
   const handleInput = (event) => {
     if (event.target.name === "players") {
+      setPlayerDataDisplay(event.target.value)
       const playersList = event.target.value.split(/\r?\n/)
       setPlayerData(playersList)
       if (playerData.length > playersPerCourt) {
