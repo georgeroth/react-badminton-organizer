@@ -16,12 +16,14 @@ function App() {
   const playersPerCourt = 4
   const navigate = useNavigate()
 
+
+  // We don't actually need to keep converting back!
+  // Just use setPlayerDataDisplay in the handleInput below and that's it :)
   // useEffect(() => {
   //     if (playerData.length > 0) {
   //     setPlayerDataDisplay(playerData.join('\n'))
   //   }
   // }, [playerData])
-
 
   const handleInput = (event) => {
     if (event.target.name === "players") {
