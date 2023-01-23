@@ -7,7 +7,10 @@ import App from './App';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    {/* Uncomment the following to use the app on GitHub Pages: */}
     <BrowserRouter basename="/react-badminton-organizer">
+
+    {/* Uncomment the following to use the app on localhost:   */}
     {/* <BrowserRouter> */}
       <App />
     </BrowserRouter>
