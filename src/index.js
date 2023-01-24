@@ -8,10 +8,10 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     {/* Uncomment the following to use the app on GitHub Pages: */}
-    {/* <BrowserRouter basename="/react-badminton-organizer"> */}
+    <BrowserRouter basename="/react-badminton-organizer">
 
     {/* Uncomment the following to use the app on localhost:   */}
-    <BrowserRouter>
+    {/* <BrowserRouter> */}
       <App />
     </BrowserRouter>
   </React.StrictMode>
