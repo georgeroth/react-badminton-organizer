@@ -27,5 +27,7 @@ The logic to generate the the rounds in JS also ended up to be an interesting ch
 <p>In order to improve the app, I will still need to break the random rounds generator function into smaller steps as it's still quite a huge beast which is currently difficult to follow. Responsiveness is also something to be developed, while I have an idea for a "Matches" page where users can see all the players playing on all the different courts, and can potentially drag & drop them into different courts as well. You can see how I'm getting on with these on the <a href="https://github.com/users/georgeroth/projects/1/views/1" target="_blank">Project Board</a> of the app.</p>
 
 <p>
-  Thanks for reading along, if you have any questions or comments, just leave them here or on GitHub, any feedback is most welcome!
+  Thanks for reading along, if you have any questions or comments, just leave them here, any feedback is most welcome!
 </p>
+
+<p><i>The original version of this readme lives on <a href="https://groth.in/badminton-article" target="_blank">groth.in/badminton-article</a>.</i></p>
