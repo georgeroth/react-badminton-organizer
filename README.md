@@ -1,5 +1,7 @@
 # Badminton Organizer
 
+<p><i><b>Update 26 Jan 2023</b> – responsiveness now has been developed!</i></p>
+
 <strong>Last year I got into a badminton club, and I've been having a lot of fun attending our trainings. I felt like I could help the team by writing a simple app that creates the schedule of the matches for the day instead having to spend 10 minutes figuring it out at the beginning of the sessions. So after gathering some requirements, I decided to use React and came up with the beta version of the app. You can check it out at <a href="http://groth.in/badminton-organizer" target="_blank">groth.in/badminton-organizer</a> or by clicking on the image below!</strong>
 
 <p align="center">
@@ -31,5 +33,3 @@ The logic to generate the the rounds in JS also ended up to be an interesting ch
 </p>
 
 <p><i>The original version of this readme lives on <a href="https://groth.in/badminton-article" target="_blank">groth.in/badminton-article</a>.</i></p>
-
-<p><i><b>Update 26 Jan 2023</b> – responsiveness now has been developed!</i></p>
