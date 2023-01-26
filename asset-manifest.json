@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/react-badminton-organizer/static/css/main.396af871.css",
+    "main.css": "/react-badminton-organizer/static/css/main.3a0811dd.css",
     "main.js": "/react-badminton-organizer/static/js/main.56bd3141.js",
     "static/media/logo_transparent.png": "/react-badminton-organizer/static/media/logo_transparent.1a24bda3549d47814bf9.png",
     "static/media/logo.png": "/react-badminton-organizer/static/media/logo.d01b73d11ade1545d4b4.png",
     "index.html": "/react-badminton-organizer/index.html",
-    "main.396af871.css.map": "/react-badminton-organizer/static/css/main.396af871.css.map",
+    "main.3a0811dd.css.map": "/react-badminton-organizer/static/css/main.3a0811dd.css.map",
     "main.56bd3141.js.map": "/react-badminton-organizer/static/js/main.56bd3141.js.map"
   },
   "entrypoints": [
-    "static/css/main.396af871.css",
+    "static/css/main.3a0811dd.css",
     "static/js/main.56bd3141.js"
   ]
 }
