@@ -13,6 +13,7 @@ function App() {
   const [rounds, setRounds] = useState([])
   const [playerDataDisplay, setPlayerDataDisplay] = useState("")
   const [notEnoughPlayers, setNotEnoughPlayers] = useState(false)
+  const [samePlayersDetected, setSamePlayersDetected] = useState(false)
   const playersPerCourt = 4
   const navigate = useNavigate()
 
@@ -51,9 +52,14 @@ function App() {
     console.log("playerData is:", playerData)
     console.log("numberOfCourts is:", numberOfCourts)
     console.log("numberOfRounds is:", numberOfRounds)
+
     if (playerData.length < playersPerCourt * numberOfCourts) {
       setNotEnoughPlayers(true)
+    } else if (checkForDuplicatePlayers(playerData).length > 0) {
+      console.log("Same players detected!")
+      setSamePlayersDetected(true)
     } else {
+    setSamePlayersDetected(false)
     setNotEnoughPlayers(false)
     const temporaryRounds = []
     let availablePlayers = []
@@ -91,6 +97,11 @@ const removeEmptyPlayerNames = (playersListSplit) => {
     return playersListSplit.filter(player => player.length > 0)
 }
 
+const checkForDuplicatePlayers = (playersList) => {
+    // Letting user know they entered duplicate players
+    return playersList.filter((item, index) => playersList.indexOf(item) != index)
+}
+
   return (
     <div className="App">
       <Header />
@@ -105,6 +116,7 @@ const removeEmptyPlayerNames = (playersListSplit) => {
         />
       </Routes>
       {notEnoughPlayers && (<div className="error">You don't have enough players for the amount of courts you have. <br></br><strong>Please lower the amount of courts or add more players and then try again.</strong></div>)}
+      {samePlayersDetected && (<div className="error">You entered the same player names at least twice.<br></br><strong>Please differentiate between the players and try again.</strong></div>)}
     </div>
   );
 }
