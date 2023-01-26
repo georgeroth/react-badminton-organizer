@@ -112,11 +112,9 @@ const checkForDuplicatePlayers = (playersList) => {
         />
           <Route
           path="/"
-          element={<Setup playerDataDisplay={playerDataDisplay} handleInput={handleInput} playerData={playerData} numberOfCourts={numberOfCourts} numberOfRounds={numberOfRounds} generateMatches={generateMatches} />}
+          element={<Setup notEnoughPlayers={notEnoughPlayers} samePlayersDetected={samePlayersDetected} playerDataDisplay={playerDataDisplay} handleInput={handleInput} playerData={playerData} numberOfCourts={numberOfCourts} numberOfRounds={numberOfRounds} generateMatches={generateMatches} />}
         />
       </Routes>
-      {notEnoughPlayers && (<div className="error">You don't have enough players for the amount of courts you have. <br></br><strong>Please lower the amount of courts or add more players and then try again.</strong></div>)}
-      {samePlayersDetected && (<div className="error">You entered the same player names at least twice.<br></br><strong>Please differentiate between the players and try again.</strong></div>)}
     </div>
   );
 }

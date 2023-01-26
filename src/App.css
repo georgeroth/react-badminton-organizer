@@ -96,6 +96,7 @@ form {
   border-radius: 10px;
   margin-bottom: 50px;
   padding: 5px;
+  box-sizing: border-box;
 }
 
 .inline {
@@ -189,7 +190,7 @@ td {
   border: 2px solid #d2360c;
   border-radius: 10px;
   background-color: white;
-  margin: 10px auto 0 auto;
+  margin: 10px auto 30px auto;
   color: #d2360c;
   padding: 10px;
 }
@@ -204,9 +205,6 @@ td {
   .playerslistcontainer {
     width: 90%;
     margin: 0 auto;
-  }
-  .playerslist {
-    box-sizing: border-box;
   }
 }
 

@@ -1,9 +1,11 @@
-export default function Setup({handleInput, playerDataDisplay, numberOfRounds, numberOfCourts, generateMatches}) {
+export default function Setup({notEnoughPlayers, samePlayersDetected, handleInput, playerDataDisplay, numberOfRounds, numberOfCourts, generateMatches}) {
     return (
         <main>
             <h1>
                 Setup
             </h1>
+            {notEnoughPlayers && (<div className="error">You don't have enough players for the amount of courts you have. <br></br><strong>Please lower the amount of courts or add more players and then try again.</strong></div>)}
+            {samePlayersDetected && (<div className="error">You entered the same player names at least twice.<br></br><strong>Please differentiate between the players and try again.</strong></div>)}
             <form onSubmit={generateMatches}>
             <label className="playerslistcontainer">
                 <h2>Players' list</h2>
