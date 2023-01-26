@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/react-badminton-organizer/static/css/main.6c18e42b.css",
-    "main.js": "/react-badminton-organizer/static/js/main.846b8a15.js",
+    "main.css": "/react-badminton-organizer/static/css/main.396af871.css",
+    "main.js": "/react-badminton-organizer/static/js/main.56bd3141.js",
     "static/media/logo_transparent.png": "/react-badminton-organizer/static/media/logo_transparent.1a24bda3549d47814bf9.png",
     "static/media/logo.png": "/react-badminton-organizer/static/media/logo.d01b73d11ade1545d4b4.png",
     "index.html": "/react-badminton-organizer/index.html",
-    "main.6c18e42b.css.map": "/react-badminton-organizer/static/css/main.6c18e42b.css.map",
-    "main.846b8a15.js.map": "/react-badminton-organizer/static/js/main.846b8a15.js.map"
+    "main.396af871.css.map": "/react-badminton-organizer/static/css/main.396af871.css.map",
+    "main.56bd3141.js.map": "/react-badminton-organizer/static/js/main.56bd3141.js.map"
   },
   "entrypoints": [
-    "static/css/main.6c18e42b.css",
-    "static/js/main.846b8a15.js"
+    "static/css/main.396af871.css",
+    "static/js/main.56bd3141.js"
   ]
 }
