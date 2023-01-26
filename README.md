@@ -31,3 +31,5 @@ The logic to generate the the rounds in JS also ended up to be an interesting ch
 </p>
 
 <p><i>The original version of this readme lives on <a href="https://groth.in/badminton-article" target="_blank">groth.in/badminton-article</a>.</i></p>
+
+<p><i><b>Update 26 Jan 2023</b> – responsiveness now has been developed!</i></p>
