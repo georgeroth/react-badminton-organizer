@@ -205,6 +205,9 @@ td {
     width: 90%;
     margin: 0 auto;
   }
+  .playerslist {
+    box-sizing: border-box;
+  }
 }
 
 @media screen and (max-width: 985px) {
