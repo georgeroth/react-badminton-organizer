@@ -206,3 +206,41 @@ td {
     margin: 0 auto;
   }
 }
+
+@media screen and (max-width: 985px) {
+  .results-table {
+    width: 96%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .sitename-container {
+    width: 0px;
+    visibility: hidden;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .menu-container ul li {
+    margin-right: 10px;
+  }
+}
+
+@media screen and (max-width: 455px) {
+  .menu-container ul li a {
+    margin-left: 10px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .menu-container ul li a, .soon {
+    font-size: 1em;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .menu-container ul li a, .soon {
+    font-size: 3vw;
+  }
+}
