@@ -242,6 +242,6 @@ td {
 
 @media screen and (max-width: 380px) {
   .menu-container ul li a, .soon {
-    font-size: 3vw;
+    font-size: 3.2vw;
   }
 }
