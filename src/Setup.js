@@ -5,7 +5,7 @@ export default function Setup({handleInput, playerDataDisplay, numberOfRounds, n
                 Setup
             </h1>
             <form onSubmit={generateMatches}>
-            <label>
+            <label className="playerslistcontainer">
                 <h2>Players' list</h2>
                 <textarea value={playerDataDisplay} onChange={handleInput} name="players" type="text" rows="12" placeholder="Player Name 1
 Player Name 2
